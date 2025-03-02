@@ -6,56 +6,36 @@
 //
 
 import Foundation
+
+
+struct HomeModel {
+    let title: String
+    let items: [MovieResult]
+}
+
 class HomeViewModel {
-    var movie: Movie?
-    var movieItems = [MovieResult]()
-    let manager = NetworkingManager()
-    var errorHandling: ((String) -> Void)?
-    var success: (() -> Void)?
+    var movieItems = [HomeModel]()
+    private let manager = NetworkingManager()
+    var completion: (() -> Void)?
+    var errorHandler: ((String) -> Void)?
     
-    func getNowPlaying() {
-        manager.reguest(endpoint: .nowPlaying,
-                        model: Movie.self) { data,error in
-            if let error {
-                self.errorHandling?(error.localizedDescription)
-            } else if let data {
-                // self.movie = data
-                self.movieItems = data.results ?? []
-                self.success?()
+    func getAllData() {
+        fetchData(title: "Now Playing", endpoint: .nowPlaying)
+        fetchData(title: "Popular", endpoint: .popular)
+        fetchData(title: "Top Rated", endpoint: .topRated)
+        fetchData(title: "Upcoming", endpoint: .upcoming)
+    }
+    
+    
+    private func fetchData(title: String, endpoint: MovieEndpoint) {
+        manager.getMovieList(page: 1, endpoint: endpoint) { data, error in
+            if let data {
+                self.movieItems.append(.init(title: title,
+                                             items: data.results ?? []))
+                self.completion?()
+            } else if let error {
+                self.errorHandler?(error)
             }
         }
     }
-            func getPopular() {
-                manager.reguest(endpoint: .popular,
-                                model: Movie.self) { data,error in
-                    if let error {
-                        self.errorHandling?(error.localizedDescription)
-                    } else if let data {
-                        // self.movie = data
-                        self.movieItems = data.results ?? []
-                        self.success?()
-                    }
-                }
-    }
-                func getTopRated() {
-                    manager.reguest(endpoint: .topRated,
-                                    model: Movie.self) { data,error in
-                        if let error {
-                            self.errorHandling?(error.localizedDescription)
-                        } else if let data {
-                        //    self.movie = data
-                            self.movieItems = data.results ?? []
-                            self.success?()
-                        }
-                        func getUpcoming() {
-                            manager.reguest(endpoint: .upcoming,
-                                            model: Movie.self) { data,error in
-                                if let error {
-                                    self.errorHandling?(error.localizedDescription)
-                                } else if let data {
-                                    //  self.movie = data
-                                    self.movieItems = data.results ?? []
-                                    self.success?()
-                                }
-                    }
 }

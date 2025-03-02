@@ -25,7 +25,7 @@ struct Dates: Codable {
 }
 
 // MARK: - Result
-struct MovieResult: Codable {
+struct MovieResult: Codable, MovieCellProtocol {
     let adult: Bool?
     let backdropPath: String?
     let genreIDS: [Int]?
@@ -37,7 +37,40 @@ struct MovieResult: Codable {
     let video: Bool?
     let voteAverage: Double?
     let voteCount: Int?
+    
+    var formattedDate: String {
+        "\(releaseDate?.prefix(4) ?? "")"
+    }
+    
+    var titleText: String {
+        "\(title ?? "") (\(releaseDate?.prefix(4) ?? ""))"
+    }
+    
+    var imageURL: String {
+        posterPath ?? ""
+    }
+    
+    var overviewText: String {
+        ""
+    }
+    
+    var departmentText: String {
+        ""
+    }
+    
+    var cellVoteAverage: Double {
+        voteAverage ?? 0
+    }
+    
+    var cellReleaseDate: String {
+        "\(releaseDate?.prefix(4) ?? "")"
+    }
+    
+    var cellGenres: [Int] {
+        genreIDS ?? []
+    }
 
+    
     enum CodingKeys: String, CodingKey {
         case adult
         case backdropPath = "backdrop_path"
@@ -52,6 +85,7 @@ struct MovieResult: Codable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
-}
-
+    
+    }
+    
 

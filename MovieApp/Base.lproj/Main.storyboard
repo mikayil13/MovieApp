@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbg-Qa-yJ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1515" y="506"/>
+            <point key="canvasLocation" x="1395" y="506"/>
         </scene>
         <!--Home Controller-->
         <scene sceneID="Oly-fY-pTg">
@@ -60,7 +60,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ie4-u8-Dsh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1488" y="-151"/>
+            <point key="canvasLocation" x="1331" y="-151"/>
+        </scene>
+        <!--Movie Details Controller-->
+        <scene sceneID="SCg-7A-pvY">
+            <objects>
+                <viewController storyboardIdentifier="MovieDetailsController" id="biW-D3-3DU" customClass="MovieDetailsController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HUk-t7-MPS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="osO-C0-6nq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8bA-A8-tkh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2156" y="-151"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OJS-cB-VGx">

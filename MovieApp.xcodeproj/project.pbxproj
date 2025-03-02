@@ -6,6 +6,17 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		762C28F52D6E11BC00BCB527 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 762C28F42D6E11BC00BCB527 /* FirebaseAuth */; };
+		762C28F72D6E11BC00BCB527 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 762C28F62D6E11BC00BCB527 /* FirebaseCore */; };
+		762C28F92D6E11BC00BCB527 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 762C28F82D6E11BC00BCB527 /* FirebaseCrashlytics */; };
+		762C28FB2D6E11BC00BCB527 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 762C28FA2D6E11BC00BCB527 /* FirebaseFirestore */; };
+		762C28FD2D6E11BC00BCB527 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 762C28FC2D6E11BC00BCB527 /* FirebaseStorage */; };
+		7652A2C92D61092C00B7F438 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7652A2C82D61092C00B7F438 /* Alamofire */; };
+		7652A3372D613E4200B7F438 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7652A3362D613E4200B7F438 /* Kingfisher */; };
+		765E3F012D6A4774004E22D5 /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 765E3F002D6A4774004E22D5 /* YouTubeiOSPlayerHelper */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		7652A25F2D60C80E00B7F438 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +76,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7652A3372D613E4200B7F438 /* Kingfisher in Frameworks */,
+				762C28F72D6E11BC00BCB527 /* FirebaseCore in Frameworks */,
+				7652A2C92D61092C00B7F438 /* Alamofire in Frameworks */,
+				762C28F92D6E11BC00BCB527 /* FirebaseCrashlytics in Frameworks */,
+				765E3F012D6A4774004E22D5 /* YouTubeiOSPlayerHelper in Frameworks */,
+				762C28FD2D6E11BC00BCB527 /* FirebaseStorage in Frameworks */,
+				762C28F52D6E11BC00BCB527 /* FirebaseAuth in Frameworks */,
+				762C28FB2D6E11BC00BCB527 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +144,14 @@
 			);
 			name = MovieApp;
 			packageProductDependencies = (
+				7652A2C82D61092C00B7F438 /* Alamofire */,
+				7652A3362D613E4200B7F438 /* Kingfisher */,
+				765E3F002D6A4774004E22D5 /* YouTubeiOSPlayerHelper */,
+				762C28F42D6E11BC00BCB527 /* FirebaseAuth */,
+				762C28F62D6E11BC00BCB527 /* FirebaseCore */,
+				762C28F82D6E11BC00BCB527 /* FirebaseCrashlytics */,
+				762C28FA2D6E11BC00BCB527 /* FirebaseFirestore */,
+				762C28FC2D6E11BC00BCB527 /* FirebaseStorage */,
 			);
 			productName = MovieApp;
 			productReference = 7652A2482D60C80D00B7F438 /* MovieApp.app */;
@@ -209,7 +236,10 @@
 			mainGroup = 7652A23F2D60C80D00B7F438;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				7652A28A2D60ED0300B7F438 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7652A2C72D61092C00B7F438 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7652A3352D613E4200B7F438 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				765E3EFF2D6A4774004E22D5 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
+				762C28F32D6E11BC00BCB527 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7652A2492D60C80D00B7F438 /* Products */;
@@ -576,7 +606,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7652A28A2D60ED0300B7F438 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		762C28F32D6E11BC00BCB527 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.8.1;
+			};
+		};
+		7652A2C72D61092C00B7F438 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -584,7 +622,66 @@
 				minimumVersion = 5.10.2;
 			};
 		};
+		7652A3352D613E4200B7F438 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.2.0;
+			};
+		};
+		765E3EFF2D6A4774004E22D5 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/youtube/youtube-ios-player-helper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		762C28F42D6E11BC00BCB527 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 762C28F32D6E11BC00BCB527 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		762C28F62D6E11BC00BCB527 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 762C28F32D6E11BC00BCB527 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		762C28F82D6E11BC00BCB527 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 762C28F32D6E11BC00BCB527 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		762C28FA2D6E11BC00BCB527 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 762C28F32D6E11BC00BCB527 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		762C28FC2D6E11BC00BCB527 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 762C28F32D6E11BC00BCB527 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		7652A2C82D61092C00B7F438 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7652A2C72D61092C00B7F438 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		7652A3362D613E4200B7F438 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7652A3352D613E4200B7F438 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		765E3F002D6A4774004E22D5 /* YouTubeiOSPlayerHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 765E3EFF2D6A4774004E22D5 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
+			productName = YouTubeiOSPlayerHelper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7652A2402D60C80D00B7F438 /* Project object */;
 }
