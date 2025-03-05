@@ -70,6 +70,7 @@ class HomeCell: UICollectionViewCell {
         
         
     }
+    var seeAllCallback: (() -> Void)?
     var movieCallback: ((Int) -> Void)?
     func configure (title: String ,  data: [MovieResult])  {
         self.data = data
@@ -79,7 +80,7 @@ class HomeCell: UICollectionViewCell {
     
     
     @objc private func seeALLButtonTapped() {
-        
+        seeAllCallback?()
     }
 
 }

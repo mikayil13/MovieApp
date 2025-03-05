@@ -12,13 +12,12 @@ class SearchController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.heightAnchor.constraint(equalToConstant: 44).isActive = true
         
-        // 🔍 Search icon əlavə edirik
         let iconImageView = UIImageView(image: UIImage(systemName: "magnifyingglass"))
         iconImageView.tintColor = .gray
         iconImageView.contentMode = .scaleAspectFit
-        iconImageView.frame = CGRect(x: 10, y: 10, width: 20, height: 20) // 📌 İcon ortalanıb
+        iconImageView.frame = CGRect(x: 10, y: 10, width: 20, height: 20)
         
-        let iconContainerView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 44)) // 🔥 Hündürlük düzəldildi
+        let iconContainerView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 44))
         iconContainerView.addSubview(iconImageView)
         
         textField.leftView = iconContainerView
@@ -44,7 +43,7 @@ class SearchController: UIViewController {
         title = "Search"
         
         searchTextField.delegate = self
-        searchTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged) // 🔥 Mətni yazdıqca çağırılacaq
+        searchTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged) 
         
         setupUI()
     }

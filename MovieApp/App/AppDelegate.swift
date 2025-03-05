@@ -22,13 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     private func signInAnonymouslyIfNeeded() {
         if let existingUserId = Auth.auth().currentUser?.uid {
-            print("✅ Mövcud Firebase UID:", existingUserId)
+            print(" Mövcud Firebase UID:", existingUserId)
         } else {
             Auth.auth().signInAnonymously { authResult, error in
                 if let error = error {
-                    print("❌ Firebase anonim giriş xətası:", error.localizedDescription)
+                    print(" Firebase anonim giriş xətası:", error.localizedDescription)
                 } else if let user = authResult?.user {
-                    print("✅ Firebase anonim giriş uğurlu! UID:", user.uid)
+                    print(" Firebase anonim giriş uğurlu! UID:", user.uid)
                     UserDefaults.standard.set(user.uid, forKey: "firebaseUserId")
                 }
             }

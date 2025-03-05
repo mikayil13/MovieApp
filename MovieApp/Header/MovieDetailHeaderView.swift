@@ -98,7 +98,7 @@ class MovieDetailHeaderView: UICollectionReusableView {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .regular)
-        label.numberOfLines = 0
+        label.numberOfLines = 5
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

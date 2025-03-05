@@ -13,6 +13,7 @@ class FavoriteController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     private func setupUI() {
+        title = "Favorite"
         view.backgroundColor = .systemBackground
         tableView.delegate = self
         tableView.dataSource = self
@@ -29,7 +30,7 @@ class FavoriteController: UIViewController, UITableViewDataSource, UITableViewDe
             .addSnapshotListener { [weak self] snapshot, error in
                 guard let self = self else { return }
                 if let error = error {
-                    print("❌ Favoritləri yükləyərkən xəta: \(error.localizedDescription)")
+                    print("Favoritləri yükləyərkən xəta: \(error.localizedDescription)")
                     return
                 }
                 
@@ -52,9 +53,6 @@ class FavoriteController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
             }
     }
-    
-    // MARK: - UITableView DataSource
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favoriteMovies.isEmpty ? 1 : favoriteMovies.count
     }

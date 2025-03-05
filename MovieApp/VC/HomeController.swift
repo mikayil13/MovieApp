@@ -1,9 +1,4 @@
-//
-//  HomeController.swift
-//  MovieApp
-//
-//  Created by Mikayil on 15.02.25.
-//
+
 
 import UIKit
 
@@ -17,7 +12,6 @@ class HomeController: UIViewController {
         configureViewModel()
         setupNavigationBar()
     }
-    
     
     private func setupNavigationBar() {
         let themeIcon = UIImage(systemName: getThemeIconName())?.withRenderingMode(.alwaysTemplate)
@@ -43,6 +37,7 @@ class HomeController: UIViewController {
         navigationItem.rightBarButtonItem?.image = themeIcon
         navigationItem.rightBarButtonItem?.tintColor = .systemYellow
     }
+    
     private func getThemeIconName() -> String {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = windowScene.windows.first(where: { $0.isKeyWindow }) else {
@@ -51,13 +46,13 @@ class HomeController: UIViewController {
         return (window.overrideUserInterfaceStyle == .dark) ? "moon.fill" : "sun.max.fill"
     }
     
-    fileprivate func configureUI(){
+    fileprivate func configureUI() {
         collection.delegate = self
         collection.dataSource = self
         collection.register(HomeCell.self, forCellWithReuseIdentifier: "HomeCell")
     }
     
-    fileprivate func configureViewModel(){
+    fileprivate func configureViewModel() {
         viewModel.getAllData()
         viewModel.errorHandler = { error in
             print("Error: \(error)")
@@ -78,19 +73,19 @@ extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCell
         let model = viewModel.movieItems[indexPath.row]
         cell.configure(title: model.title, data: model.items)
+        cell.seeAllCallback = {
+            let controller = SeeAllViewController(viewModel: .init(items: model.items))
+            self.navigationController?.show(controller, sender: nil)
+        }
         cell.movieCallback = { id in
-          let vc = MovieDetailsController()
+            let vc = MovieDetailsController()
             vc.movieID = id
             self.navigationController?.show(vc, sender: nil)
-//            guard let navigationController = navigationController else { return }
-//            let coordinator = MovieDetailCoordinator(movie: movie, navigationController: navigationController)
-//            coordinator.start()
-
         }
         return cell
     }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: collectionView.frame.width, height: 320)
     }
 }
+

@@ -51,8 +51,6 @@ struct MovieDetail: Codable {
         case voteCount = "vote_count"
     }
 }
-
-// MARK: - BelongsToCollection
 struct BelongsToCollection: Codable {
     var titleText: String {
         name ?? ""
@@ -79,8 +77,6 @@ struct BelongsToCollection: Codable {
         case backdropPath = "backdrop_path"
     }
 }
-
-// MARK: - ProductionCompany
 struct ProductionCompany: Codable {
     let id: Int?
     let logoPath, name, originCountry: String?
@@ -92,8 +88,6 @@ struct ProductionCompany: Codable {
         case originCountry = "origin_country"
     }
 }
-
-// MARK: - ProductionCountry
 struct ProductionCountry: Codable {
     let iso3166_1, name: String?
 

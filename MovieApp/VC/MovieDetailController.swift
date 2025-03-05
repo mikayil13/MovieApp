@@ -33,15 +33,11 @@ class MovieDetailsController: UIViewController {
         }
         collectionView.frame = view.bounds
         setupLayout()
-        fetchDataVideo()
+        fetchDataVideo() 
         fetchSimilarMovies()
         setupNavigationBar()
         favoriteViewModel.fetchFavorites()
               self.checkIfFavorite()
-          
-      
-        
-        
     }
     private func setupNavigationBar() {
         let bookmarkButton = UIBarButtonItem(
@@ -103,7 +99,7 @@ class MovieDetailsController: UIViewController {
         
         favoriteViewModel.isMovieFavorite(movieId: "\(movieID ?? 0)") { [weak self] isFav in
             guard let self = self else { return }
-            print("📌 `checkIfFavorite` nəticəsi: \(isFav) \(movieID ?? 0)")
+            print(" `checkIfFavorite` nəticəsi: \(isFav) \(movieID ?? 0)")
             self.isFavorite = isFav
             self.updateBookmarkIcon()
         }
@@ -174,8 +170,6 @@ class MovieDetailsController: UIViewController {
         ])
     }
 }
-
-// MARK: - UICollectionView Delegate & DataSource
 extension MovieDetailsController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

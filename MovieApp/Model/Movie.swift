@@ -19,12 +19,10 @@ struct Movie: Codable {
     }
 }
 
-// MARK: - Dates
 struct Dates: Codable {
     let maximum, minimum: String?
 }
 
-// MARK: - Result
 struct MovieResult: Codable, MovieCellProtocol {
     let adult: Bool?
     let backdropPath: String?
